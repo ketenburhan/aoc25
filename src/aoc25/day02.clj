@@ -6,10 +6,10 @@
 
 (defn invalid-id-part1?
   [^String id-str]
-    (if (odd? (count id-str))
-      false
-      (let [pair (partition (int (/ (count id-str) 2)) id-str)]
-        (= (first pair) (second pair)))))
+  (if (odd? (count id-str))
+    false
+    (let [pair (partition (int (/ (count id-str) 2)) id-str)]
+      (= (first pair) (second pair)))))
 
 
 (defn str-range
@@ -17,7 +17,7 @@
   (let [pair (str/split str-pair #"-")
         subs-pairs (map #(map (partial subs % 0) (reverse (range (inc (count %))))) pair)
         same-part (ffirst (filter (partial apply =) (apply map vector subs-pairs)))
-        different-parts (map #(Integer/parseUnsignedInt %) (map #(subs %  (count same-part)) pair))
+        different-parts (map #(Integer/parseUnsignedInt %) (map #(subs % (count same-part)) pair))
         diff-range (range (first different-parts) (inc (second different-parts)))]
     (map #(str same-part %) diff-range)))
 
@@ -31,7 +31,7 @@
 
 
 (println (str "part1 test: " (part1 test-data)))
-(println (str "part1 output: "  (part1 data)))
+(println (str "part1 output: " (part1 data)))
 
 
 (defn invalid-id-part2?
@@ -52,4 +52,4 @@
 
 
 (println (str "part2 test: " (part2 test-data)))
-(println (str "part2 output: "  (part2 data)))
+(println (str "part2 output: " (part2 data)))

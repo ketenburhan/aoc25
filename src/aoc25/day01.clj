@@ -33,7 +33,7 @@
     zero-count))
 
 (println (str "part1 test: " (part1 test-data)))
-(println (str "part1 output: "  (part1 data)))
+(println (str "part1 output: " (part1 data)))
 
 (defn part2
   [input]
@@ -44,5 +44,5 @@
     zero-count))
 
 (println (str "part2 test: " (part2 test-data)))
-(println (str "part2 output: "  (part2 data)))
+(println (str "part2 output: " (part2 data)))
 
