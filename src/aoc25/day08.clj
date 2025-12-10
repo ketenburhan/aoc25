@@ -16,22 +16,6 @@
 (comment (str->Vec3 "162,817,812"))
 
 (defn all-combinations
-  [vectors]
-  (mapcat identity (loop [vecs vectors
-                          pairs []]
-                     (let [curr-vec (first vecs)
-                           rst (rest vecs)]
-                       (if (empty? rst)
-                         pairs
-                         (recur rst (conj pairs (map #(vector curr-vec %) rst))))))))
-
-
-(comment (all-combinations [(->Vec3 1 2 3)
-                            (->Vec3 4 5 6)
-                            (->Vec3 7 8 9)
-                            (->Vec3 10 11 12)]))
-
-(defn all-combinations
   [items]
   (mapcat identity (loop [coll items
                           pairs []]
